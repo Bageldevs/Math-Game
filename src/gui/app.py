@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class App: 
-    def __init__(self, width, height, title, resize):
+    def __init__(self, width: int, height: int, title: str, resize: bool):
         self.width = width
         self.height = height
         self.title = title
@@ -10,8 +10,8 @@ class App:
 
     def create_app(self):
         self.tk_Window.geometry(f"{self.width}x{self.height}")
-        self.tk_Window.title = self.title
-        self.tk_Window.resizable = self.resize
+        self.tk_Window.title(self.title)
+        self.tk_Window.resizable(self.resize, self.resize)
     
     def get_win(self):
         return self.tk_Window
