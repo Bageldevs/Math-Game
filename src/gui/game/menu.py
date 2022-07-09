@@ -1,8 +1,12 @@
 import tkinter as tk
 
-class DrawGUI:
+class Menu:
     def __init__(self, canvas: tk.Canvas):
         pass
     
     def draw(self):
         pass
+
+    def update(self):
+        pass
+    
