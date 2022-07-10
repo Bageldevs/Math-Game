@@ -1,5 +1,6 @@
 import tkinter as tk
 from .game.menu import *
+from .game.game_screen import *
 
 class App: 
     def __init__(self, width: int, height: int, title: str, resize: bool):
@@ -17,10 +18,16 @@ class App:
         self.tk_Window.title(self.title)
         self.tk_Window.resizable(self.resize, self.resize)
 
-        self.canvas = tk.Canvas(self.tk_Window, width=700, height=600)
-        self.canvas.pack()
-
-        self.menu = Menu(self.canvas)
+        self.menu_canvas = tk.Canvas(self.tk_Window, width=700, height=175, bd=2, highlightthickness=1, 
+            highlightbackground='red')
+        
+        self.menu_canvas.pack(side = tk.BOTTOM)
+        
+        #self.game_canvas = tk.Canvas(self.tk_Window, self.width, self.height)
+        #self.game_canvas.pack()
+    
+        self.menu = Menu(self.menu_canvas)
+        #self.gameWindow = game_win(self.game_canvas)
 
     def get_win(self):
         ## get window ##
@@ -32,26 +39,12 @@ class App:
 
     def run(self):
         ## MENU ##
-        self.menu.draw(0, 425, 700, 600)
-        
-        ## Coordinates that worked (0, 200, 700, 0)
-        '''
-        x0 = 0
-        y0 = 0
-        x1 = 700
-        y1 = 250
-        '''
-
-        """For example, the rectangle specified by top left corner (100,100) and 
-        bottom right corner (102,102) is a square two pixels by two pixels, including 
-        pixel (101,101) but not including (102,102)."""
-
+        self.menu.draw(0, 0, 700, 175)
         self.menu.update()
 
         ## GAME ##
+        #self.gameWindow.draw()
+        #self.gameWindow.update()
 
         ## TKINTER WINDOW ##
-        self.tk_Window.update()
-        
-        
-        
+        self.tk_Window.update()     
