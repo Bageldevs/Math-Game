@@ -17,7 +17,7 @@ class App:
         self.tk_Window.title(self.title)
         self.tk_Window.resizable(self.resize, self.resize)
 
-        self.canvas = tk.Canvas(self.tk_Window)
+        self.canvas = tk.Canvas(self.tk_Window, width=700, height=600)
         self.canvas.pack()
 
         self.menu = Menu(self.canvas)
@@ -31,12 +31,27 @@ class App:
         return self.canvas
 
     def run(self):
-        self.tk_Window.update()
         ## MENU ##
-        self.menu.draw(0, 200, 700, 0)
+        self.menu.draw(0, 425, 700, 600)
+        
+        ## Coordinates that worked (0, 200, 700, 0)
+        '''
+        x0 = 0
+        y0 = 0
+        x1 = 700
+        y1 = 250
+        '''
+
+        """For example, the rectangle specified by top left corner (100,100) and 
+        bottom right corner (102,102) is a square two pixels by two pixels, including 
+        pixel (101,101) but not including (102,102)."""
+
         self.menu.update()
 
         ## GAME ##
+
+        ## TKINTER WINDOW ##
+        self.tk_Window.update()
         
         
         

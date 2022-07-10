@@ -12,7 +12,7 @@ class Menu:
         self.y1 = y1
 
         #create rect
-        self.rect = self.canvas.create_rectangle(self.x0, self.y0, self.x1, self.y1, fill='red')
+        self.rect = self.canvas.create_rectangle(self.x0, self.y0, self.x1, self.y1, fill='#AFAFAF')
 
         #a = canvas.create_rectangle(50, 0, 50, 0, fill='red')
         #print(f'{self.x0, self.y0, self.x1, self.y1}'
