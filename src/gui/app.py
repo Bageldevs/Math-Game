@@ -1,4 +1,5 @@
 import tkinter as tk
+from turtle import width
 from .game.menu import *
 from .game.game_screen import *
 
@@ -17,9 +18,9 @@ class App:
         self.tk_Window.geometry(f"{self.width}x{self.height}")
         self.tk_Window.title(self.title)
         self.tk_Window.resizable(self.resize, self.resize)
+        
 
-        self.menu_canvas = tk.Canvas(self.tk_Window, width=700, height=175, bd=2, highlightthickness=1, 
-            highlightbackground='red')
+        self.menu_canvas = tk.Canvas(self.tk_Window, width=700, height=175, bg="#AFAFAF", bd=1, highlightbackground="#AFAFAF")
         
         self.menu_canvas.pack(side = tk.BOTTOM)
         
@@ -39,7 +40,7 @@ class App:
 
     def run(self):
         ## MENU ##
-        self.menu.draw(0, 0, 700, 175)
+        #self.menu.draw(0, 0, 700, 175)
         self.menu.update()
 
         ## GAME ##
