@@ -21,13 +21,16 @@ class App:
         
 
         self.menu_canvas = tk.Canvas(self.tk_Window, width=700, height=175, bg="#AFAFAF", bd=1, highlightbackground="#AFAFAF")
-        
+        self.game_canvas = tk.Canvas(self.tk_Window, width=700, height=425, bg="#000000", bd=1, highlightbackground="#000000")
+
         self.menu_canvas.pack(side = tk.BOTTOM)
+        self.game_canvas.pack(side = tk.TOP)
         
         #self.game_canvas = tk.Canvas(self.tk_Window, self.width, self.height)
         #self.game_canvas.pack()
     
         self.menu = Menu(self.menu_canvas)
+        self.gamescreen = game_win(self.game_canvas)
         #self.gameWindow = game_win(self.game_canvas)
 
     def get_win(self):
@@ -44,6 +47,7 @@ class App:
         self.menu.update()
 
         ## GAME ##
+        self.gamescreen.update()
         #self.gameWindow.draw()
         #self.gameWindow.update()
 
